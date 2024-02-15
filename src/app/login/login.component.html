@@ -1,0 +1,19 @@
+<div class="container">
+  <!-- <div class="row ">
+    <h1 class="d-block mx-auto"> Login </h1>
+  </div> -->
+  <div class="row">
+
+    <div class="col-lg-5 d-block mx-auto border border-warning m-3  p-5" style="background-color: hsla(182, 47%, 46%, 0.228);">
+    <h1 class="text-center"> Login </h1>
+
+  <form [formGroup]="frmdata" (ngSubmit)="login(frmdata.value)"  class="form-group" >
+    <span class="h4">User Name :  </span> <span class="text-danger h5" *ngIf="frmdata.controls.username.touched && frmdata.controls.username.invalid">*enter valid user ID</span> <br>
+<input type="text" formControlName="username" class="form-control"> <br>
+<span class="h4">Password :</span> <span class="text-danger h5" *ngIf="frmdata.controls.password.touched && frmdata.controls.password.invalid">*enter valid password</span> <br>
+<input type="password" formControlName="password" class="form-control"> <br><br>
+<button class="btn btn-warning d-block mx-auto" type="submit">Login</button>
+  </form>
+</div>
+</div>
+</div>

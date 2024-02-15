@@ -1,0 +1,31 @@
+<div class="container" style="background-color: rgba(0, 0, 0, 0.018);">
+  <div class="row">
+    <div class="col-lg-12 text-center mt-3 ">
+      <h4 class="text-info" >Add New Product</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 h5">
+      <form [formGroup]="frmdata"  (ngSubmit)="save(frmdata.value)">
+        ProductName : <br>
+        <input type="text" formControlName="name" class="form-control" >
+        Description: <br>
+        <input type="text" formControlName="des" class="form-control">
+        Price : <br>
+        <input type="text" formControlName="price" class="form-control">
+        MRP : <br>
+        <input type="text" formControlName="mrp" class="form-control">
+        Image Path : <br>
+        <input type="text" formControlName="avatar" class="form-control">
+        category : <br>
+        <input type="radio"  class="form-check-inline" formControlName="category" value="men" >Men
+        <input type="radio" class="form-check-inline" formControlName="category" value="women" >Women
+        <br>
+        <input type="checkbox" class="form-check-inline" formControlName="IsValid" value="true" >In Stock
+        <br> <br>
+        <button type="submit" class="btn btn-info mx-auto d-block px-5">Add</button>
+      </form>
+    </div>
+  </div>
+
+</div>

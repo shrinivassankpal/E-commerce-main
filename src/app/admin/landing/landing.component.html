@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+<div class="col-lg-3 ">
+  <ul class="nav flex-column " >
+    <li class="nav-item">
+      <a class="nav-link h5  " routerLink="dashboard">DashBoard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link h5 " routerLink="products">Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link h5 " routerLink="addproduct">Add Product</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link h5  " routerLink="orders">Orders</a>
+    </li>
+    <li class="btn btn-danger" (click)="logout()"> Logout</li>
+  </ul>
+</div>
+<div class="col-lg-9">
+  <router-outlet></router-outlet>
+</div>
+</div>
+</div>
+
+
+

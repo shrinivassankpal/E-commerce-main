@@ -1,0 +1,150 @@
+<div class="colorlib-product" *ngIf="subtotal != 0">
+  <div class="container">
+    <div class="row row-pb-lg">
+      <div class="col-sm-10 offset-md-1">
+        <div class="process-wrap">
+          <div class="process text-center active">
+            <p><span>01</span></p>
+            <h3>Shopping Cart</h3>
+          </div>
+          <div class="process text-center active">
+            <p><span>02</span></p>
+            <h3>Checkout</h3>
+          </div>
+          <div class="process text-center">
+            <p><span>03</span></p>
+            <h3>Order Complete</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <form method="post" class="colorlib-form" [formGroup]="frmdata" >
+          <h2>Billing Details</h2>
+                <div class="row">
+
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="fname">Name</label>
+                <input type="text" formControlName="name" id="name" class="form-control" placeholder="Your firstname">
+              </div>
+            </div>
+            <!-- <div class="col-md-6">
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" class="form-control" placeholder="Your lastname">
+              </div>
+            </div> -->
+
+            <!-- <div class="col-md-12">
+              <div class="form-group">
+                <label for="companyname">Company Name</label>
+                        <input type="text" id="companyname" class="form-control" placeholder="Company Name">
+                    </div>
+                 </div> -->
+
+                 <div class="col-md-12">
+              <div class="form-group">
+                <label for="fname">Address</label>
+                        <input type="text" formControlName="address" id="address" class="form-control" placeholder="Enter Your Address">
+                    </div>
+                    <!-- <div class="form-group">
+                        <input type="text" id="address2" class="form-control" placeholder="Second Address">
+                    </div> -->
+                 </div>
+
+                 <div class="col-md-12">
+              <div class="form-group">
+                <label for="companyname">Town/City</label>
+                        <input type="text" formControlName="city" id="towncity" class="form-control" placeholder="Town or City">
+                    </div>
+                 </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="stateprovince">State/Province</label>
+                <input type="text" formControlName="state" id="state" class="form-control" placeholder="State Province">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lname">Zip/Postal Code</label>
+                <input type="text" formControlName="zipcode" id="zipcode" class="form-control" placeholder="Zip / Postal">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">E-mail Address</label>
+                <input type="text" formControlName="email" id="email" class="form-control" placeholder="State Province">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Phone">Phone Number</label>
+                <input type="text" formControlName="mono" id="phoneno" class="form-control" placeholder="">
+              </div>
+            </div>
+
+
+               </div>
+            </form>
+      </div>
+
+      <div class="col-lg-6">
+
+          <div class="row">
+              <div class="cart-detail  ">
+                <table class="table table-bordered w-100">
+                    <tr class="table-info">
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                    <tr *ngFor="let info of finaldata">
+                      <td><img src="{{info.avatar}}" width="100px"></td>
+                      <td>{{info.name}}</td>
+                      <td>{{info.price}}</td>
+                      <td>{{info.qty}}</td>
+                      <td>{{info.price *info.qty}}</td>
+                    </tr>
+                </table>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="cart-detail">
+              <h2>Cart Total</h2>
+              <ul>
+                <li>
+                  <span>Subtotal</span> <span>{{subtotal | currency:"INR" }} </span>
+
+                </li>
+                <li><span>Shipping</span> <span>$0.00</span></li>
+                <li><span>Order Total</span> <span>{{subtotal | currency:"INR"}}</span></li>
+              </ul>
+            </div>
+           </div>
+
+           <div class="w-100"></div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p><a  class="btn btn-info  btn-lg" (click)="orderplace()">Place an order</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="subtotal == 0">
+  <div class="col-lg-12">
+    <img src="https://www.primehairdepot.com/images/order_success_placed.gif" width="100%">
+  </div>
+</div>
